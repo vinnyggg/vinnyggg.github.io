@@ -29,10 +29,10 @@
   <nav id="sidebar" class="fixed top-0 left-0 h-screen w-56 bg-gradient-to-b from-blue-600 to-purple-700 text-white flex flex-col items-center py-10 space-y-8 transform -translate-x-full lg:translate-x-0 transition-transform duration-300 z-50">
     <h1 class="hidden lg:block text-2xl font-bold">Your Name</h1>
     <ul class="flex flex-col space-y-4 text-lg">
-      <li><a href="#hero" class="hover:text-gray-200">Home</a></li>
-      <li><a href="#about" class="hover:text-gray-200">About</a></li>
-      <li><a href="#projects" class="hover:text-gray-200">Projects</a></li>
-      <li><a href="#contact" class="hover:text-gray-200">Contact</a></li>
+      <li><a href="#hero" class="nav-link hover:text-gray-200">Home</a></li>
+      <li><a href="#about" class="nav-link hover:text-gray-200">About</a></li>
+      <li><a href="#projects" class="nav-link hover:text-gray-200">Projects</a></li>
+      <li><a href="#contact" class="nav-link hover:text-gray-200">Contact</a></li>
     </ul>
   </nav>
 
@@ -102,17 +102,31 @@
     const menuBtn = document.getElementById("menu-btn");
     const sidebar = document.getElementById("sidebar");
     const overlay = document.getElementById("overlay");
+    const navLinks = document.querySelectorAll(".nav-link");
 
+    // Toggle menu
     menuBtn.addEventListener("click", () => {
       sidebar.classList.toggle("-translate-x-full");
       overlay.classList.toggle("hidden");
     });
 
+    // Close when overlay clicked
     overlay.addEventListener("click", () => {
       sidebar.classList.add("-translate-x-full");
       overlay.classList.add("hidden");
     });
 
+    // Close sidebar when a nav link is clicked (mobile only)
+    navLinks.forEach(link => {
+      link.addEventListener("click", () => {
+        if (window.innerWidth < 1024) { // only on mobile/tablet
+          sidebar.classList.add("-translate-x-full");
+          overlay.classList.add("hidden");
+        }
+      });
+    });
+
+    // Set year in footer
     document.getElementById("year").textContent = new Date().getFullYear();
   </script>
 </body>
