@@ -29,7 +29,7 @@
   <nav id="sidebar" class="fixed top-0 left-0 h-screen w-56 bg-gradient-to-b from-blue-600 to-purple-700 text-white flex flex-col items-center py-10 space-y-8 transform -translate-x-full lg:translate-x-0 transition-transform duration-300 z-50">
     <h1 class="hidden lg:block text-2xl font-bold">Vincent Guevara</h1>
     <ul class="flex flex-col space-y-4 text-lg">
-      <li><a href="#hero" class="nav-link hover:text-gray-200">Home</a></li>
+      <li><a href="#home" class="nav-link hover:text-gray-200">Home</a></li>
       <li><a href="#about" class="nav-link hover:text-gray-200">About</a></li>
       <li><a href="#projects" class="nav-link hover:text-gray-200">Projects</a></li>
       <li><a href="#contact" class="nav-link hover:text-gray-200">Contact</a></li>
@@ -44,8 +44,15 @@
     <!-- Add padding-top on mobile so content isn’t hidden under fixed topbar -->
     <div class="pt-16 lg:pt-0">
       
-      <!-- Hero -->
-      <section id="hero" class="h-screen flex flex-col justify-center items-center bg-gradient-to-r from-blue-500 to-purple-600 text-white text-center">
+
+
+      <!-- Home -->
+      <section id="home" class="h-screen flex flex-col justify-center items-center bg-gradient-to-r from-blue-500 to-purple-600 text-white text-center">
+      <!-- Profile Picture (responsive) -->
+        <div class="w-full max-w-xl mb-6">
+          <img src="assets/images/profile.jpeg" alt="Vincent Guevara"
+              class="w-full h-auto rounded-xl border-4 border-gray-300 shadow-lg">
+        </div>          
         <h1 class="text-5xl font-bold mb-4">Vincent Guevara</h1>
         <p class="text-xl mb-6">Software Engineer | Tech Enthusiast | Problem Solver</p>
         <a href="#about" class="px-6 py-3 bg-white text-blue-600 font-semibold rounded-lg shadow hover:bg-gray-200 transition">Learn More</a>
